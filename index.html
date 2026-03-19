@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caveat Loan — New Sections Draft | Tembusu Financial Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── BRAND TOKENS (tbs-brand v1.2) ── */
+:root {
+  --tembusu-emerald:      #005a3d;
+  --tembusu-emerald-deep: #063222;
+  --tembusu-emerald-mid:  #006e4a;
+  --tembusu-pale-green:   #b9e4d4;
+  --tembusu-bottle-green: #063222;
+  --tembusu-charcoal:     #2E2E2E;
+  --tembusu-white:        #FFFFFF;
+  --tembusu-beige:        #F5F0E8;
+  --tembusu-beige-dark:   #EAE4D6;
+  --tembusu-gray-light:   #F9F8F5;
+  --tembusu-gray-rule:    #E2DDD5;
+  --tembusu-gradient-1:   linear-gradient(135deg, #063222, #005a3d);
+  --whatsapp-green:       #25D366;
+  --pad-x: 72px;
+  --pad-y: 64px;
+  --pad-y-sm: 40px;
+  --radius: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 12pt;
+  line-height: 1.7;
+  color: var(--tembusu-charcoal);
+  background: var(--tembusu-white);
+}
+
+h2 {
+  font-family: 'Vollkorn', Georgia, serif;
+  font-size: clamp(20pt, 3vw, 26pt);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--tembusu-emerald);
+}
+h3 {
+  font-family: 'Vollkorn', Georgia, serif;
+  font-size: 16pt;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--tembusu-emerald);
+}
+p {
+  font-size: 11.5pt;
+  line-height: 1.75;
+  color: var(--tembusu-charcoal);
+  margin-bottom: 14px;
+}
+p:last-child { margin-bottom: 0; }
+a { color: var(--tembusu-emerald); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── LAYOUT HELPERS ── */
+.section { padding: var(--pad-y) var(--pad-x); }
+.section.beige { background: var(--tembusu-beige); }
+.section.light { background: var(--tembusu-gray-light); }
+.section.dark  { background: var(--tembusu-emerald); }
+.section.dark h2, .section.dark h3 { color: var(--tembusu-white); }
+.section.dark p { color: rgba(255,255,255,0.80); }
+.section-inner { max-width: 1080px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--tembusu-emerald);
+  margin-bottom: 10px;
+  display: block;
+}
+.section.beige .section-label { color: var(--tembusu-emerald); }
+.section.dark  .section-label { color: var(--tembusu-pale-green); }
+
+.emerald-rule {
+  display: block;
+  width: 40px; height: 3px;
+  background: var(--tembusu-emerald);
+  border-radius: 2px;
+  margin: 16px 0 28px;
+}
+
+/* ── DRAFT BANNER ── */
+.draft-banner {
+  background: var(--tembusu-emerald-deep);
+  padding: 14px var(--pad-x);
+}
+.draft-banner p {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+  max-width: 1080px;
+}
+.draft-banner strong { color: var(--tembusu-pale-green); }
+
+/* ══════════════════════════════════════════════════
+   SECTION 1 — CAVEAT VS MORTGAGE COMPARISON
+══════════════════════════════════════════════════ */
+
+/* Intro two-col */
+.comparison-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+.product-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--tembusu-gray-rule);
+}
+.product-card.active {
+  border-color: var(--tembusu-emerald);
+  box-shadow: 0 4px 20px rgba(0,90,61,0.10);
+}
+.product-card-header {
+  background: var(--tembusu-gradient-1);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.product-card-header.muted {
+  background: var(--tembusu-beige-dark);
+}
+.product-card-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18pt;
+  flex-shrink: 0;
+}
+.product-card-header .product-name {
+  font-family: 'Vollkorn', Georgia, serif;
+  font-size: 14pt;
+  font-weight: 700;
+  color: var(--tembusu-white);
+  margin: 0;
+  line-height: 1.2;
+}
+.product-card-header.muted .product-name {
+  color: var(--tembusu-charcoal);
+}
+.product-card-header .product-tagline {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.65);
+  font-family: 'Inter', sans-serif;
+  margin-top: 3px;
+}
+.product-card-header.muted .product-tagline {
+  color: #888;
+}
+.product-card-body {
+  padding: 20px 24px;
+  background: var(--tembusu-white);
+}
+.product-card.active .product-card-body {
+  background: var(--tembusu-white);
+}
+.product-detail-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-detail-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 10.5pt;
+  color: var(--tembusu-charcoal);
+  line-height: 1.5;
+}
+.product-detail-list li .detail-key {
+  font-weight: 600;
+  color: var(--tembusu-emerald);
+  min-width: 120px;
+  flex-shrink: 0;
+  font-size: 10pt;
+}
+.product-detail-list li .detail-val {
+  color: #555;
+}
+
+/* Comparison table */
+.comp-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--tembusu-gray-rule);
+  margin-bottom: 28px;
+}
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.comp-table thead tr {
+  background: var(--tembusu-bottle-green);
+}
+.comp-table th {
+  padding: 14px 20px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--tembusu-white);
+}
+.comp-table th.caveat-col {
+  background: var(--tembusu-emerald);
+  color: var(--tembusu-white);
+}
+.comp-table th.mortgage-col {
+  background: #041e15;
+  color: rgba(255,255,255,0.75);
+}
+.comp-table td {
+  padding: 13px 20px;
+  font-size: 10.5pt;
+  border-bottom: 1px solid var(--tembusu-gray-rule);
+  vertical-align: top;
+  line-height: 1.55;
+  color: var(--tembusu-charcoal);
+}
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table tr:nth-child(even) td { background: var(--tembusu-beige); }
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--tembusu-charcoal);
+  font-size: 10pt;
+}
+.comp-table td.caveat-col {
+  color: var(--tembusu-emerald);
+  font-weight: 600;
+}
+.comp-tick { color: var(--tembusu-emerald); font-weight: 700; }
+.comp-neutral { color: #888; }
+
+/* Decision callout */
+.decision-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.decision-card {
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  border: 1.5px solid var(--tembusu-gray-rule);
+}
+.decision-card.choose-caveat {
+  border-color: var(--tembusu-emerald);
+  background: linear-gradient(135deg, rgba(0,90,61,0.04) 0%, rgba(0,90,61,0.01) 100%);
+}
+.decision-card.choose-mortgage {
+  background: var(--tembusu-gray-light);
+}
+.decision-card-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+.choose-caveat .decision-card-label  { color: var(--tembusu-emerald); }
+.choose-mortgage .decision-card-label { color: #aaa; }
+.decision-card h3 {
+  font-size: 13pt;
+  margin-bottom: 14px;
+  color: var(--tembusu-charcoal);
+}
+.decision-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.decision-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 10.5pt;
+  color: #555;
+  line-height: 1.5;
+}
+.decision-list li::before {
+  content: '→';
+  color: var(--tembusu-emerald);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.choose-mortgage .decision-list li::before { color: #aaa; }
+
+/* ══════════════════════════════════════════════════
+   SECTION 2 — CASE STUDIES
+══════════════════════════════════════════════════ */
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 36px;
+}
+.case-card {
+  background: var(--tembusu-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--tembusu-gray-rule);
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.case-card:hover { box-shadow: 0 8px 32px rgba(0,90,61,0.10); }
+
+.case-header {
+  background: var(--tembusu-gradient-1);
+  padding: 24px 28px 22px;
+  position: relative;
+  overflow: hidden;
+}
+.case-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; right: -30px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185,228,212,0.10) 0%, transparent 65%);
+}
+.case-industry {
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tembusu-pale-green);
+  margin-bottom: 8px;
+  display: block;
+}
+.case-header h3 {
+  color: var(--tembusu-white);
+  font-size: 14.5pt;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+.case-header-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.case-header-meta span {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.60);
+  font-family: 'Inter', sans-serif;
+}
+
+.case-stats {
+  display: flex;
+  border-bottom: 1px solid var(--tembusu-gray-rule);
+}
+.case-stat {
+  flex: 1;
+  padding: 16px 20px;
+  text-align: center;
+  border-right: 1px solid var(--tembusu-gray-rule);
+}
+.case-stat:last-child { border-right: none; }
+.case-stat-num {
+  font-family: 'Vollkorn', Georgia, serif;
+  font-size: 17pt;
+  font-weight: 700;
+  color: var(--tembusu-emerald);
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+.case-stat-label {
+  font-size: 8.5pt;
+  color: #999;
+  line-height: 1.3;
+}
+
+.case-body {
+  padding: 24px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.case-block-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.case-block-label.situation { color: #aaa; }
+.case-block-label.solution  { color: var(--tembusu-emerald); }
+.case-block-label.outcome   { color: #27ae60; }
+.case-body p {
+  font-size: 10.5pt;
+  color: #555;
+  line-height: 1.70;
+  margin-bottom: 0;
+}
+
+.case-outcome-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.outcome-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #eaf7f1;
+  border: 1px solid var(--tembusu-pale-green);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--tembusu-emerald);
+}
+.outcome-pill::before {
+  content: '✓';
+  font-weight: 700;
+  font-size: 8.5pt;
+}
+
+.case-divider {
+  border: none;
+  border-top: 1px solid var(--tembusu-gray-rule);
+}
+
+.case-quote {
+  background: var(--tembusu-beige);
+  border-left: 4px solid var(--tembusu-emerald);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+  font-family: 'Vollkorn', Georgia, serif;
+  font-size: 12pt;
+  font-style: italic;
+  color: var(--tembusu-charcoal);
+  line-height: 1.6;
+}
+.case-quote-attr {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-style: normal;
+  font-weight: 600;
+  color: #999;
+  display: block;
+  margin-top: 10px;
+}
+
+.case-disclaimer {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: var(--tembusu-gray-light);
+  border-radius: var(--radius);
+  border: 1px solid var(--tembusu-gray-rule);
+}
+.case-disclaimer p {
+  font-size: 9pt;
+  color: #aaa;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  :root { --pad-x: 24px; --pad-y: 48px; }
+  .comparison-intro { grid-template-columns: 1fr; }
+  .case-grid { grid-template-columns: 1fr; }
+  .decision-strip { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+  .comp-table th, .comp-table td { padding: 10px 12px; font-size: 9.5pt; }
+}
+</style>
+</head>
+<body>
+
+<div class="draft-banner">
+  <p><strong>Draft — Caveat Loan Page · Two new sections</strong> · Placement notes included as HTML comments · tembusufs.com/caveat-loan</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SECTION 1 — CAVEAT LOAN VS MORTGAGE LOAN
+     Recommended placement: After "Benefits" block,
+     replacing the off-topic "Top Considerations Before Getting a
+     Bridging Loan" section currently on the page.
+══════════════════════════════════════════════════════════════ -->
+<section class="section beige">
+  <div class="section-inner">
+
+    <span class="section-label">Understanding Your Options</span>
+    <h2>Caveat Loan vs Mortgage Loan — What's the Difference?</h2>
+    <span class="emerald-rule"></span>
+    <p style="max-width:660px;">Tembusu offers two property-backed financing products. Both are TDSR-exempt and secured against your property — but they serve different situations. Here's how to tell them apart and choose the right one for your business.</p>
+
+    <!-- Two product snapshot cards -->
+    <div class="comparison-intro">
+
+      <div class="product-card active">
+        <div class="product-card-header">
+          <div class="product-card-icon">🔖</div>
+          <div>
+            <p class="product-name">Caveat Loan</p>
+            <p class="product-tagline">Second-charge financing on an already-mortgaged property</p>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <ul class="product-detail-list">
+            <li>
+              <span class="detail-key">Best for</span>
+              <span class="detail-val">Businesses with an existing mortgage needing additional working capital without refinancing</span>
+            </li>
+            <li>
+              <span class="detail-key">Security</span>
+              <span class="detail-val">Second-charge caveat lodged on the property title — sits behind existing mortgage</span>
+            </li>
+            <li>
+              <span class="detail-key">LTV</span>
+              <span class="detail-val">Up to 80% of property value (combined with existing mortgage)</span>
+            </li>
+            <li>
+              <span class="detail-key">Processing</span>
+              <span class="detail-val">Faster — lower legal complexity than a full mortgage</span>
+            </li>
+            <li>
+              <span class="detail-key">Property types</span>
+              <span class="detail-val">Residential, commercial, industrial — including properties with existing bank loans</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header muted">
+          <div class="product-card-icon">🏦</div>
+          <div>
+            <p class="product-name">Mortgage Loan</p>
+            <p class="product-tagline">First-charge financing on an unencumbered or refinanced property</p>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <ul class="product-detail-list">
+            <li>
+              <span class="detail-key">Best for</span>
+              <span class="detail-val">Businesses with an unencumbered property seeking maximum loan quantum</span>
+            </li>
+            <li>
+              <span class="detail-key">Security</span>
+              <span class="detail-val">First-charge mortgage registered on the property title — priority security position</span>
+            </li>
+            <li>
+              <span class="detail-key">LTV</span>
+              <span class="detail-val">Up to 80% of property value as a standalone first mortgage</span>
+            </li>
+            <li>
+              <span class="detail-key">Processing</span>
+              <span class="detail-val">Slightly longer — full mortgage registration required</span>
+            </li>
+            <li>
+              <span class="detail-key">Property types</span>
+              <span class="detail-val">Residential, commercial, industrial — property must be unencumbered or fully refinanced</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Comparison table -->
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="caveat-col">Caveat Loan</th>
+            <th class="mortgage-col">Mortgage Loan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Works on mortgaged properties</td>
+            <td class="caveat-col"><span class="comp-tick">✓</span> Yes — second charge behind existing mortgage</td>
+            <td><span class="comp-neutral">Requires unencumbered property or full refinance</span></td>
+          </tr>
+          <tr>
+            <td>Maximum LTV</td>
+            <td class="caveat-col">Up to 80% combined LTV</td>
+            <td>Up to 80% standalone LTV</td>
+          </tr>
+          <tr>
+            <td>TDSR restriction</td>
+            <td class="caveat-col"><span class="comp-tick">✓</span> Exempt</td>
+            <td><span class="comp-tick">✓</span> Exempt</td>
+          </tr>
+          <tr>
+            <td>Approval speed</td>
+            <td class="caveat-col"><span class="comp-tick">✓</span> 1 business day</td>
+            <td>1 business day</td>
+          </tr>
+          <tr>
+            <td>Typical disbursement</td>
+            <td class="caveat-col"><span class="comp-tick">✓</span> 1–2 days after legal completion</td>
+            <td>2–4 weeks after legal completion</td>
+          </tr>
+          <tr>
+            <td>Legal complexity</td>
+            <td class="caveat-col"><span class="comp-tick">✓</span> Lower — caveat registration only</td>
+            <td>Higher — full mortgage registration</td>
+          </tr>
+          <tr>
+            <td>Ideal loan quantum</td>
+            <td class="caveat-col">Smaller to mid-range top-up amounts</td>
+            <td>Larger first-mortgage amounts</td>
+          </tr>
+          <tr>
+            <td>Property ownership requirement</td>
+            <td class="caveat-col">Company or shareholder-owned</td>
+            <td>Company or shareholder-owned</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Decision guide -->
+    <div class="decision-strip">
+      <div class="decision-card choose-caveat">
+        <span class="decision-card-label">Choose a Caveat Loan if…</span>
+        <h3>Your Property Already Has a Mortgage</h3>
+        <ul class="decision-list">
+          <li>You need working capital but don't want to disturb your existing mortgage</li>
+          <li>You need funds quickly — caveat registration is faster than a full mortgage</li>
+          <li>You want to top up available equity without refinancing your current loan</li>
+          <li>Your business needs short-to-medium-term capital for growth or cash flow</li>
+        </ul>
+      </div>
+      <div class="decision-card choose-mortgage">
+        <span class="decision-card-label">Choose a Mortgage Loan if…</span>
+        <h3>Your Property is Unencumbered</h3>
+        <ul class="decision-list">
+          <li>Your property is fully paid up and you want maximum loan quantum</li>
+          <li>You are refinancing an existing mortgage and topping up simultaneously</li>
+          <li>You need a larger loan amount than caveat equity allows</li>
+          <li>You prefer a first-charge security structure for a longer-term facility</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SECTION 2 — CASE STUDIES
+     Recommended placement: After "Why Our Caveat Business Loans"
+     icon strip, before FAQ.
+══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner">
+
+    <span class="section-label">Real Deals. Real Results.</span>
+    <h2>How Businesses Used Second-Charge Equity to Move Fast</h2>
+    <span class="emerald-rule"></span>
+    <p style="max-width:620px;">A caveat loan works precisely when most lenders won't — when there's already a mortgage on the property and the business still needs capital. Here's how two of our clients put it to work.</p>
+
+    <div class="case-grid">
+
+      <!-- Case A: Trading company / shophouse -->
+      <div class="case-card">
+        <div class="case-header">
+          <span class="case-industry">Trading — Inventory Financing</span>
+          <h3>Trading Company Secures Peak Season Inventory After Bank Declines Top-Up</h3>
+          <div class="case-header-meta">
+            <span>🏢 Shophouse · Chinatown</span>
+            <span>📅 Funds in 4 days</span>
+          </div>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-num">$450K</span>
+            <span class="case-stat-label">Loan Amount</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">68%</span>
+            <span class="case-stat-label">Combined LTV</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">4 days</span>
+            <span class="case-stat-label">To Disbursement</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+
+          <div>
+            <span class="case-block-label situation">The Situation</span>
+            <p>A consumer goods importer needed $450K to place orders ahead of the Chinese New Year season — their highest revenue period of the year. The company's director owned a Chinatown shophouse with an existing bank mortgage. The bank declined a top-up loan, citing their internal LTV ceiling already being reached under MAS guidelines. Approaching a second bank would take weeks; the supplier's order window closed in five days.</p>
+          </div>
+
+          <hr class="case-divider">
+
+          <div>
+            <span class="case-block-label solution">What Tembusu Structured</span>
+            <p>Tembusu assessed the shophouse at current market value. With the existing bank mortgage, the combined LTV came to 68% — within Tembusu's parameters. A caveat was lodged on the title as a second charge, and the $450K facility was approved within 24 hours. Legal was completed within three days, and funds were disbursed on day four.</p>
+          </div>
+
+          <hr class="case-divider">
+
+          <div>
+            <span class="case-block-label outcome">The Outcome</span>
+            <div class="case-outcome-pills">
+              <span class="outcome-pill">Orders placed on time</span>
+              <span class="outcome-pill">Peak season fulfilled</span>
+              <span class="outcome-pill">Loan repaid in 9 months</span>
+            </div>
+          </div>
+
+          <div class="case-quote">
+            "We'd never heard of a caveat loan before. Within a week we had the funds and the orders were in. The bank took three weeks just to tell us no."
+            <span class="case-quote-attr">— Director, Consumer Goods Importer, Singapore</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Case B: Property investor / condo -->
+      <div class="case-card">
+        <div class="case-header">
+          <span class="case-industry">Property Investment — Acquisition Deposit</span>
+          <h3>Investor Uses Condo Equity to Fund Commercial Unit Deposit Without Refinancing</h3>
+          <div class="case-header-meta">
+            <span>🏠 Private Residential · Novena</span>
+            <span>📅 Funds in 5 days</span>
+          </div>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-num">$320K</span>
+            <span class="case-stat-label">Loan Amount</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">71%</span>
+            <span class="case-stat-label">Combined LTV</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">5 days</span>
+            <span class="case-stat-label">To Disbursement</span>
+          </div>
+        </div>
+
+        <div class="case-body">
+
+          <div>
+            <span class="case-block-label situation">The Situation</span>
+            <p>A private investor had identified a strata retail unit in a suburban mall — priced attractively and selling below market due to the vendor's urgency. The 20% option deposit of $320K was due within a week. The investor owned a Novena condominium with a long-term bank mortgage and had substantial equity, but refinancing would take 4–6 weeks and incur exit penalties on the existing loan. He needed a way to access the equity without touching the mortgage.</p>
+          </div>
+
+          <hr class="case-divider">
+
+          <div>
+            <span class="case-block-label solution">What Tembusu Structured</span>
+            <p>Tembusu lodged a second-charge caveat against the Novena condo, preserving the existing bank mortgage entirely. The combined LTV across both the bank loan and Tembusu's caveat was 71%. The $320K was approved within one business day and disbursed on day five following caveat registration. The existing mortgage was undisturbed; no exit penalties were incurred.</p>
+          </div>
+
+          <hr class="case-divider">
+
+          <div>
+            <span class="case-block-label outcome">The Outcome</span>
+            <div class="case-outcome-pills">
+              <span class="outcome-pill">Option exercised on time</span>
+              <span class="outcome-pill">Existing mortgage intact</span>
+              <span class="outcome-pill">Commercial unit acquired</span>
+            </div>
+          </div>
+
+          <div class="case-quote">
+            "I didn't even know it was possible to borrow against a mortgaged property without refinancing. The caveat loan solved the problem I thought had no solution."
+            <span class="case-quote-attr">— Private Investor, Singapore</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="case-disclaimer">
+      <p>* Details have been generalised to protect client confidentiality. Loan amounts, LTV ratios, and timelines are representative of actual transactions. All loans are subject to credit assessment and Tembusu's standard terms and conditions.</p>
+    </div>
+
+  </div>
+</section>
+
+
+</body>
+</html>
